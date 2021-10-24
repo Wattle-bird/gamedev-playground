@@ -37,14 +37,27 @@
         width: var(--size);
         background-color: tan;
       }
+
+      #navigation {
+        display: flex;
+      }
+
+      #navigation button{
+        flex-grow: 1;
+        font-size: 16px;
+      }
     </style>
   </head>
   <body>
-    <script>eruda.init();</script>
+    <script>if(location.hostname=="localhost")eruda.init();</script>
     <div id=wrapper>
       <div id=pixi></div>
       <div id=controls>hello I'm a control</div>
-      <div id=navigation><button>buttons</button></div>
+      <div id=navigation>
+        <button id=prev>Prev</button>
+        <button id=toggleControls>Placeholder</button>
+        <button id=next>Next</button>
+      </div>
     </div>
   </body>
 </html>
