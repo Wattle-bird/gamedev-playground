@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import { AbstractScene } from "./scenes/abstractScene";
+import {DitherScene} from "./scenes/ditherScene";
 import {PlasmaScene} from "./scenes/plasmaScene";
 import {RadialScene} from "./scenes/radialScene";
 import {ShaderScene} from "./scenes/shaderScene";
@@ -10,7 +11,8 @@ export class Engine {
   scenes = [
     ShaderScene,
     PlasmaScene,
-    RadialScene
+    RadialScene,
+    DitherScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
