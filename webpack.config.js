@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const publicPath   = path.resolve(__dirname, 'public');
 const srcPath      = path.resolve(__dirname, 'src');
-const buildPath    = path.resolve(__dirname, 'dist');
+const buildPath    = path.resolve(__dirname, 'docs');
 
 module.exports = {
   entry: path.join(srcPath, 'index.ts'),

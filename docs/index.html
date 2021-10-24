@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TITLE</title><script src="//cdn.jsdelivr.net/npm/eruda"></script><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root {
+        --size: min(100vw, 60vh);
+        --control-height: calc(var(--size) / 2)
+      }
+      body {
+        margin: 0;
+      }
+
+
+      #wrapper {
+        width: var(--size);
+        margin: 0 auto;
+      }
+
+      #pixi {
+        width: var(--size);
+        height: var(--size);
+      }
+
+      #pixi canvas {
+        width: var(--size);
+        height: var(--size);
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+      }
+
+      #controls {
+        height: var(--control-height);
+        width: var(--size);
+        background-color: tan;
+      }</style><script defer="defer" src="bundle.js"></script></head><body><script>eruda.init();</script><div id="wrapper"><div id="pixi"></div><div id="controls">hello I'm a control</div><div id="navigation"><button>buttons</button></div></div></body></html>
