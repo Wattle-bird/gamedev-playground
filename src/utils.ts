@@ -52,6 +52,10 @@ export const sweetie16 = [
   0x333c57, // dark grey
 ]
 
+export function sw16index(n: number) {
+  return sweetie16[mod(n|0, 16)]
+}
+
 export function for2d(width: number, height: number, func: Function) {
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
