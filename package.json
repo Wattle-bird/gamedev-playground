@@ -4,7 +4,8 @@
   "description": "Starter for TypeScript on Web Browser",
   "scripts": {
     "start": "webpack-cli serve --mode development",
-    "build": "webpack"
+    "build": "webpack",
+    "prepare": "husky install"
   },
   "keywords": [
     "TypeScript",
@@ -24,6 +25,7 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
+    "husky": "^7.0.4",
     "pixi.js": "^5.3.10",
     "pointer-tracker": "^2.5.3",
     "typescript-formatter": "^7.2.2"
