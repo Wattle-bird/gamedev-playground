@@ -10,8 +10,8 @@
     "declaration": true,
     "target": "es2015",
     "lib": ["es2017", "dom"],
-    "outDir": "dist",
-    "rootDir": "./",
+    "outDir": "docs",
+    "rootDir": "./"
   },
   "include": [
     "src/**/*"
