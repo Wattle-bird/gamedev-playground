@@ -88,3 +88,15 @@ export function mod(x: number, y: number) {
   while (x < 0) x += y;
   return x % y;
 }
+
+export function makeGrid(width:number, height:number, default_:any=0): any[][] {
+  const grid = []
+  for1d(width, (x: number)=>{
+    grid[x] = []
+    for1d(height, (y: number)=>{
+      grid[x][y] = default_
+    })
+  })
+  console.log(grid)
+  return grid
+}

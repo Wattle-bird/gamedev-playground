@@ -1,9 +1,9 @@
 import * as PIXI from "pixi.js";
 import { AbstractScene } from "./scenes/abstractScene";
-import { ShaderScene } from "./scenes/shaderScene";
+import { LifeScene } from "./scenes/lifeScene";
 export declare class Engine {
     pixi: PIXI.Application;
-    scenes: (typeof ShaderScene)[];
+    scenes: (typeof LifeScene)[];
     sceneNumber: number;
     currentScene: AbstractScene;
     time: number;
