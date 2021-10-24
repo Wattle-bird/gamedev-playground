@@ -25,6 +25,7 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
+    "docs": "^0.3.2-canary.0",
     "husky": "^7.0.4",
     "pixi.js": "^5.3.10",
     "pointer-tracker": "^2.5.3",
