@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { AbstractScene } from "./scenes/abstractScene";
 import {DitherScene} from "./scenes/ditherScene";
+import {DripScene} from "./scenes/dripScene";
 import {LifeScene} from "./scenes/lifeScene";
 import {PlasmaScene} from "./scenes/plasmaScene";
 import {RadialScene} from "./scenes/radialScene";
@@ -14,7 +15,8 @@ export class Engine {
     PlasmaScene,
     RadialScene,
     DitherScene,
-    LifeScene
+    LifeScene,
+    DripScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
