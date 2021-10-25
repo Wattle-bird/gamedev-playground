@@ -66,7 +66,7 @@ export function for2d(width: number, height: number, func: Function) {
 
 export function for1d(max: number, func: Function) {
   for (let x = 0; x < max; x++) {
-    func(max)
+    func(x)
   }
 }
 
@@ -97,6 +97,5 @@ export function makeGrid(width:number, height:number, default_:any=0): any[][] {
       grid[x][y] = default_
     })
   })
-  console.log(grid)
   return grid
 }
