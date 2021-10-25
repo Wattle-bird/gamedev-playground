@@ -1,7 +1,7 @@
 import { Engine } from "../engine";
 import { PixelArray } from "../graphics/pixelArray";
 import { AbstractScene } from "./abstractScene";
-export declare class LifeScene extends AbstractScene {
+export declare class LifeDecayScene extends AbstractScene {
     image: PixelArray;
     life: LifeEngine;
     lastUpdate: number;
@@ -19,6 +19,7 @@ declare class LifeEngine {
     constructor(width?: number, height?: number, stayAlive?: number[], comeAlive?: number[]);
     update(): void;
     flip(): void;
+    decay(): void;
 }
 declare class WrappingGrid {
     width: number;

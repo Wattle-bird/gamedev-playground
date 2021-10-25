@@ -4,7 +4,7 @@ import { PixelArray } from "../graphics/pixelArray";
 import {for2d, makeGrid, mod, sweetie16} from "../utils";
 import { AbstractScene } from "./abstractScene";
 
-export class LifeScene extends AbstractScene {
+export class LifeDecayScene extends AbstractScene {
   image: PixelArray;
   life: LifeEngine;
   lastUpdate = 0
@@ -23,14 +23,16 @@ export class LifeScene extends AbstractScene {
       this.lastUpdate = this.e.time
       this.life.update()
       this.image.drawPixels(192, 192, (x, y) => {
-        return sweetie16[this.life.grid.get(x, y) * 2]
+        let value = this.life.grid.get(x, y)
+        if (value) value++
+        return sweetie16[value]
       })
     }
   }
 }
 
 class LifeEngine {
-  newValue = 1
+  newValue = 4
   grid: WrappingGrid;
   nextGrid: WrappingGrid;
   constructor(public width=192, public height=192, public stayAlive = [2,3], public comeAlive = [3]) {
@@ -39,6 +41,7 @@ class LifeEngine {
   }
 
   update() {
+    this.decay()
     for2d(this.width, this.height, (x,y)=>{
       const surrounding = this.grid.howManySurround(x, y)
       if (this.grid.get(x, y) > 0) {
@@ -46,7 +49,7 @@ class LifeEngine {
           this.nextGrid.set(x, y, 0)
         }
         else {
-          this.nextGrid.set(x, y, this.newValue)
+          this.nextGrid.set(x, y, this.grid.get(x, y))
         }
       } else {
         if (this.comeAlive.includes(surrounding)) {
@@ -64,6 +67,15 @@ class LifeEngine {
     const tmp = this.grid;
     this.grid = this.nextGrid;
     this.nextGrid = tmp;
+  }
+
+  decay() {
+    for2d(this.width, this.height, (x,y) => {
+      const current = this.grid.get(x,y)
+      if (current > 1) {
+        this.grid.set(x, y, current-1)
+      }
+    })
   }
 
 
@@ -84,7 +96,7 @@ class WrappingGrid {
     return surrounding
   }
 
-  randomize(threshold = 0.3) {
+  randomize(threshold = 0.1) {
     for2d(this.width, this.height,(x, y) => {
       if (Math.random() < threshold) {
         this.set(x, y, 1)
