@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { Engine } from "../engine";
 import {PixelArray} from "../graphics/pixelArray";
+import { ShadowText } from "../graphics/text";
 import {mod, sw16index, sweetie16} from "../utils";
 import { AbstractScene } from "./abstractScene";
 
@@ -11,6 +12,9 @@ export class CoordScene2 extends AbstractScene {
 
     this.pa = new PixelArray()
     this.add(this.pa)
+
+    const title = new ShadowText(0,0,'Coords: Y and Angle')
+    this.add(title)
   }
   update(dt: number) {
     this.pa.drawPixels(this.e.width, this.e.height, (x: any, y: any) => {
