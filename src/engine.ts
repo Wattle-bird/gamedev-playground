@@ -4,6 +4,7 @@ import {CoordScene} from "./scenes/coordScene";
 import {CoordScene2} from "./scenes/coordScene2";
 import {DitherScene} from "./scenes/ditherScene";
 import {DripScene} from "./scenes/dripScene";
+import { FontScene } from "./scenes/fontScene";
 import {LifeDecayScene} from "./scenes/lifeDecayScene";
 import {LifeScene} from "./scenes/lifeScene";
 import {PlasmaScene} from "./scenes/plasmaScene";
@@ -11,6 +12,7 @@ import {RadialScene} from "./scenes/radialScene";
 import {ShaderScene} from "./scenes/shaderScene";
 import {StarfieldScene} from "./scenes/starfieldScene";
 import {mod} from "./utils";
+import ffo = require('fontfaceobserver')
 
 
 export class Engine {
@@ -24,13 +26,19 @@ export class Engine {
     LifeDecayScene,
     CoordScene,
     CoordScene2,
-    StarfieldScene
+    StarfieldScene,
+    FontScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
   time = 0
 
   constructor(public pixi: PIXI.Application) {
+    const font = new ffo("ModernDOS");
+    font.load().then(this.start.bind(this))
+  }
+
+  start() {
     this.startScene(this.scenes.length-1);
     this.pixi.ticker.add(this.update.bind(this))
     this.setupButtons()

@@ -1,15 +1,14 @@
 import * as PIXI from "pixi.js";
 import { AbstractScene } from "./scenes/abstractScene";
-import { LifeScene } from "./scenes/lifeScene";
-import { ShaderScene } from "./scenes/shaderScene";
-import { StarfieldScene } from "./scenes/starfieldScene";
+import { FontScene } from "./scenes/fontScene";
 export declare class Engine {
     pixi: PIXI.Application;
-    scenes: (typeof ShaderScene | typeof LifeScene | typeof StarfieldScene)[];
+    scenes: (typeof FontScene)[];
     sceneNumber: number;
     currentScene: AbstractScene;
     time: number;
     constructor(pixi: PIXI.Application);
+    start(): void;
     startScene(num: number): void;
     stopScene(): void;
     update(dt: number): void;
