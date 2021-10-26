@@ -12,7 +12,6 @@ import {RadialScene} from "./scenes/radialScene";
 import {ShaderScene} from "./scenes/shaderScene";
 import {StarfieldScene} from "./scenes/starfieldScene";
 import {mod} from "./utils";
-import ffo = require('fontfaceobserver')
 
 
 export class Engine {
@@ -34,8 +33,9 @@ export class Engine {
   time = 0
 
   constructor(public pixi: PIXI.Application) {
-    const font = new ffo("ModernDOS");
-    font.load().then(this.start.bind(this))
+    const loader = new PIXI.Loader()
+    loader.add('ModernDOS', 'assets/ModernDOS.fnt')
+    loader.load(this.start.bind(this))
   }
 
   start() {

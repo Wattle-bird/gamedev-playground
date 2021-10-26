@@ -27,7 +27,6 @@
   "dependencies": {
     "copy-webpack-plugin": "^9.0.1",
     "docs": "^0.3.2-canary.0",
-    "fontfaceobserver": "^2.1.0",
     "husky": "^7.0.4",
     "pixi.js": "^5.3.10",
     "pointer-tracker": "^2.5.3",

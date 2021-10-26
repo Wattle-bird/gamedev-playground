@@ -17,21 +17,12 @@ export class FontScene extends AbstractScene {
       return sweetie16[1]
     })
 
-    const loader = new PIXI.Loader()
-loader.add('ModernDOS', 'assets/ModernDOS.fnt').load(() => {
-  // Once font has been loaded, call a function that uses it
-  const font = new PIXI.BitmapText('Hello\n newline', {fontName: 'Modern DOS 437 8x8'})
-  this.add(font)
-  font.tint = 0xff6644
-})
 
-/*
     const text1 = new SimpleText(0,0,"Hello from font!")
     this.add(text1)
 
     const text2 = new SimpleText(0,16,"This is a loooong sentence, and can be wrapped")
-    text2.style.wordWrap = true;
-    text2.style.wordWrapWidth = 192
+    text2.maxWidth = 192
     this.add(text2)
 
     const text3 = new SimpleText(0, 48, "Color!")
@@ -46,16 +37,15 @@ loader.add('ModernDOS', 'assets/ModernDOS.fnt').load(() => {
       this.letters.push(st)
       this.add(st)
     })
-    */
   }
 
   update(dt: number) {
     const t = this.e.time;
 
-    /*this.letters.forEach((letter, index) => {
+    this.letters.forEach((letter, index) => {
       letter.text.tint = sw16index(t/10 + index/3)
       letter.y = 140 + Math.sin(t/40 - index/3)*20|0;
-    })*/
+    })
   }
 
 }

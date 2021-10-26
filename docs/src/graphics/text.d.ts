@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-export declare class SimpleText extends PIXI.Text {
+export declare class SimpleText extends PIXI.BitmapText {
     constructor(x: number, y: number, text: string);
 }
 export declare class ShadowText extends PIXI.Container {
