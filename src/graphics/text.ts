@@ -1,11 +1,17 @@
 import * as PIXI from "pixi.js";
 
+let FONT_SIZE = 8
+console.log(navigator.userAgent)
+if (navigator.userAgent.includes("Android") && navigator.userAgent.includes("Firefox")) {
+  FONT_SIZE = 6.95 // why mozilla, whyyyyy
+}
+
 export class SimpleText extends PIXI.Text {
   constructor(x: number, y:number, text: string) {
     super(text, new PIXI.TextStyle({
       fill: 0xffffff,
       fontFamily: "ModernDOS",
-      fontSize: 8
+      fontSize: FONT_SIZE
     }))
 
     this.x = x;
