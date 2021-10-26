@@ -1,5 +1,6 @@
 import { Engine } from "../engine";
 import * as PIXI from "pixi.js";
+import { PixelArray } from "../graphics/pixelArray";
 
 
 export abstract class AbstractScene {
@@ -11,7 +12,7 @@ export abstract class AbstractScene {
 
   abstract update(dt: number): void
 
-  add(container: PIXI.Container) {
+  add(container: any) {
     this.container.addChild(container);
   }
 

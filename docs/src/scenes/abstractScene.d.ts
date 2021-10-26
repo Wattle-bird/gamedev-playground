@@ -5,6 +5,6 @@ export declare abstract class AbstractScene {
     container: PIXI.Container;
     constructor(e: Engine);
     abstract update(dt: number): void;
-    add(container: PIXI.Container): void;
+    add(container: any): void;
     stop(): void;
 }
