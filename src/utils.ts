@@ -99,3 +99,9 @@ export function makeGrid(width:number, height:number, default_:any=0): any[][] {
   })
   return grid
 }
+
+export function clamp(bottom: number, top: number, x: number) {
+  if (x < bottom) return bottom;
+  if (x > top) return top;
+  return x
+}

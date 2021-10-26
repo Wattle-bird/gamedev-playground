@@ -9,6 +9,7 @@ import {LifeScene} from "./scenes/lifeScene";
 import {PlasmaScene} from "./scenes/plasmaScene";
 import {RadialScene} from "./scenes/radialScene";
 import {ShaderScene} from "./scenes/shaderScene";
+import {StarfieldScene} from "./scenes/starfieldScene";
 import {mod} from "./utils";
 
 
@@ -22,7 +23,8 @@ export class Engine {
     DripScene,
     LifeDecayScene,
     CoordScene,
-    CoordScene2
+    CoordScene2,
+    StarfieldScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene

@@ -7,3 +7,4 @@ export declare function srand(a: number): Function;
 export declare function rgb(r: number, g: number, b: number): number;
 export declare function mod(x: number, y: number): number;
 export declare function makeGrid(width: number, height: number, default_?: any): any[][];
+export declare function clamp(bottom: number, top: number, x: number): number;
