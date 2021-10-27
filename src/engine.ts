@@ -43,7 +43,11 @@ export class Engine {
   }
 
   start() {
-    this.startScene(0);
+    const hashNumber = parseInt(location.hash.slice(1))
+    if (!isNaN(hashNumber)) {
+      this.sceneNumber = hashNumber
+    }
+    this.startScene(this.sceneNumber);
     this.pixi.ticker.add(this.update.bind(this))
     this.setupButtons()
   }
@@ -51,6 +55,7 @@ export class Engine {
   startScene(num: number) {
     this.currentScene = new this.scenes[num](this);
     this.sceneNumber = num
+    location.hash = ''+this.sceneNumber
   }
 
   stopScene() {
