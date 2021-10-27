@@ -6,6 +6,7 @@ export function startPixi(w = 192, h=192) {
     height: h,
     antialias: false,
   })
+  PIXI.settings.ROUND_PIXELS = true;
 
   document.querySelector('#pixi').appendChild(pixi.view)
 
