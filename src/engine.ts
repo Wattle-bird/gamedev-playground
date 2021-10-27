@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import { AbstractScene } from "./scenes/abstractScene";
+import { CharsScene } from "./scenes/charsScene";
 import {CoordScene} from "./scenes/coordScene";
 import {CoordScene2} from "./scenes/coordScene2";
 import {DitherScene} from "./scenes/ditherScene";
@@ -26,7 +27,8 @@ export class Engine {
     CoordScene,
     CoordScene2,
     StarfieldScene,
-    FontScene
+    FontScene,
+    CharsScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
