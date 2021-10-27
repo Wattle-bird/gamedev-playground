@@ -13,6 +13,7 @@ import {PlasmaScene} from "./scenes/plasmaScene";
 import {RadialScene} from "./scenes/radialScene";
 import {ShaderScene} from "./scenes/shaderScene";
 import {StarfieldScene} from "./scenes/starfieldScene";
+import {TextShootyScene} from "./scenes/textShootyScene";
 import {mod} from "./utils";
 
 
@@ -31,6 +32,7 @@ export class Engine {
     StarfieldScene,
     FontScene,
     CharsScene,
+    TextShootyScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
