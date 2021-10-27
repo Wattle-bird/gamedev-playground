@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <style>
       :root {
-        --size: min(100vw, 60vh);
+        /*--size: min(100vw, 60vh);*/
+        --size: min(100vw, 90vh);
         --control-height: calc(var(--size) / 2)
       }
       body {
@@ -33,7 +34,7 @@
       }
 
       #controls {
-        height: var(--control-height);
+        /*height: var(--control-height);*/
         width: var(--size);
         background-color: tan;
       }
@@ -52,10 +53,9 @@
     <script>if(location.hostname=="localhost")eruda.init();</script>
     <div id=wrapper>
       <div id=pixi></div>
-      <div id=controls>hello I'm a control</div>
+      <div id=controls></div>
       <div id=navigation>
         <button id=prev>Prev</button>
-        <button id=toggleControls>Placeholder</button>
         <button id=next>Next</button>
       </div>
     </div>

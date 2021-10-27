@@ -6,6 +6,7 @@ import {CoordScene2} from "./scenes/coordScene2";
 import {DitherScene} from "./scenes/ditherScene";
 import {DripScene} from "./scenes/dripScene";
 import { FontScene } from "./scenes/fontScene";
+import {IntroScene} from "./scenes/introScene";
 import {LifeDecayScene} from "./scenes/lifeDecayScene";
 import {LifeScene} from "./scenes/lifeScene";
 import {PlasmaScene} from "./scenes/plasmaScene";
@@ -17,6 +18,7 @@ import {mod} from "./utils";
 
 export class Engine {
   scenes = [
+    IntroScene,
     ShaderScene,
     PlasmaScene,
     RadialScene,
@@ -28,7 +30,7 @@ export class Engine {
     CoordScene2,
     StarfieldScene,
     FontScene,
-    CharsScene
+    CharsScene,
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
@@ -41,7 +43,7 @@ export class Engine {
   }
 
   start() {
-    this.startScene(this.scenes.length-1);
+    this.startScene(0);
     this.pixi.ticker.add(this.update.bind(this))
     this.setupButtons()
   }
