@@ -6,7 +6,7 @@ export class Vector {
   }
 }
 
-export class Rectangle {
+export class Rect {
   loc: Vector
   size: Vector
 
@@ -19,6 +19,9 @@ export class Rectangle {
   get left() {
     return this.x
   }
+  set left(val) {
+    this.x = val
+  }
   get right() {
     return this.x + this.w
   }
@@ -28,11 +31,28 @@ export class Rectangle {
   get top() {
     return this.y
   }
+  set top(val) {
+    this.y = val
+  }
   get bottom() {
     return this.y + this.h
   }
   set bottom(val) {
     this.y = val - this.h
+  }
+
+  //Center
+  get centerX() {
+    return this.x + this.w/2
+  }
+  set centerX(val) {
+    this.x = val - this.w/2
+  }
+  get centerY() {
+    return this.y + this.h/2
+  }
+  set centerY(val) {
+    this.y = val - this.h/2
   }
 
   // Scalars
