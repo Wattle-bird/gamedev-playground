@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { OneButtonController } from "../controllers/oneButtonController";
 import { Engine } from "../engine";
+import {ShadowText} from "../graphics/text";
 import { sweetie16 } from "../utils";
 import { AbstractScene } from "./abstractScene";
 
@@ -15,6 +16,7 @@ export class ButtonScene extends AbstractScene {
     this.background = Math.random()*0xffffff
     this.add(this.gfx)
 
+    this.add(new ShadowText(0, 0, "Button test"))
     this.controller = new OneButtonController();
     this.controller.onPress = this.onPress.bind(this)
   }
