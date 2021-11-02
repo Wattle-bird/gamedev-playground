@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import { AbstractScene } from "./scenes/abstractScene";
+import { ButtonScene } from "./scenes/buttonScene";
 import { CharsScene } from "./scenes/charsScene";
 import {CoordScene} from "./scenes/coordScene";
 import {CoordScene2} from "./scenes/coordScene2";
@@ -32,7 +33,8 @@ export class Engine {
     StarfieldScene,
     FontScene,
     CharsScene,
-    TextShootyScene
+    TextShootyScene,
+    ButtonScene
   ]
   sceneNumber = 0;
   currentScene: AbstractScene
@@ -62,6 +64,7 @@ export class Engine {
 
   stopScene() {
     this.currentScene.stop()
+    document.querySelector('#controls').innerHTML = ''
   }
 
   update(dt: number) {
