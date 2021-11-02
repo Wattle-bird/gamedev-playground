@@ -22,6 +22,12 @@ export class OneButtonController {
     const pressButton = document.querySelector('#press')
     pressButton.addEventListener('pointerdown', this.doPress.bind(this));
     this.pointerTracker = new PointerTracker(pressButton as HTMLElement);
+
+    pressButton.addEventListener("click", (e)=>e.preventDefault())
+    pressButton.addEventListener("dblclick", (e)=>e.preventDefault())
+    pressButton.addEventListener("contextmenu", (e)=>e.preventDefault())
+    pressButton.addEventListener("touchdown", (e)=>e.preventDefault())
+    pressButton.addEventListener("mousedown", (e)=>e.preventDefault())
   }
 
   doPress(ev: PointerEvent) {
